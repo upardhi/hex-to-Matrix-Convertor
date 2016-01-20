@@ -1,0 +1,15 @@
+/**
+ * Use for getting Hexadecimal color to Color Matrix
+ * @param {Hexadecimal} rgb 
+ * @param {Float} alpha
+ * @return {Array} matrix
+ */
+function hexToMatrix ( rgb, alpha ) 
+{
+    var matrix = [];
+    matrix = matrix.concat([((rgb & 0x00FF0000) >>> 16)/255, ((rgb & 0x00FF0000) >>> 16)/255, ((rgb & 0x00FF0000) >>> 16)/255, ((rgb & 0x00FF0000) >>> 16)/255, 0]); // red
+    matrix = matrix.concat([((rgb & 0x0000FF00) >>> 8)/255, ((rgb & 0x0000FF00) >>> 8)/255, ((rgb & 0x0000FF00) >>> 8)/255, ((rgb & 0x0000FF00) >>> 8)/255, 0]); // green
+    matrix = matrix.concat([(rgb & 0x000000FF)/255, (rgb & 0x000000FF)/255, (rgb & 0x000000FF)/255, (rgb & 0x000000FF)/255, 0]); // blue
+    matrix = matrix.concat([0, 0, 0, alpha/100, 0]); // alpha
+    return matrix;
+}
