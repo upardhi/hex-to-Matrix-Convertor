@@ -13,4 +13,6 @@ Use hex to matrix function like this
 
 hexToMatrix ('0xFF00FF',0);
 
+result is [1, 1, 1, 0, 0, 0 , 0, 0 , 0 , 0, 0 , 0, 0, 0, 0, 0, 0, 0, 1, 0]
+
 
